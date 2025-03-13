@@ -9,9 +9,9 @@
 
 ## Environment
 
-Xcode 16.2
-iOS 18.2
-Swift 5
+- Xcode 16.2
+- iOS 18.2
+- Swift 5
 
 
 ## Credits
