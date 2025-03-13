@@ -2,7 +2,7 @@
 
 ## Video Demo
 
-[<img src="https://img.youtube.com/vi/cbBFlChTaeU/hqdefault.jpg" width="931" height="556"
+[<img src="https://i.ytimg.com/vi/cbBFlChTaeU/maxresdefault.jpg" width="960" height="540"
 />](https://www.youtube.com/embed/cbBFlChTaeU)
 
 👆 Click to play video
