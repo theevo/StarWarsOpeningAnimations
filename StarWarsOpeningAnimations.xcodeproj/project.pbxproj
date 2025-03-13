@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		27D1A8BE2D837059005C52BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27D1A8BD2D837059005C52BF /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		27D1A8A32D8365AE005C52BF /* StarWarsOpeningAnimations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsOpeningAnimations.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D1A8BD2D837059005C52BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		27D1A89A2D8365AE005C52BF = {
 			isa = PBXGroup;
 			children = (
+				27D1A8BD2D837059005C52BF /* README.md */,
 				27D1A8A52D8365AE005C52BF /* StarWarsOpeningAnimations */,
 				27D1A8A42D8365AE005C52BF /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D1A8BE2D837059005C52BF /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
