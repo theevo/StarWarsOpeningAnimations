@@ -2,12 +2,11 @@
 
 ## Video Demo
 
-[<img src="https://img.youtube.com/vi/cbBFlChTaeU/hqdefault.jpg" width="600" height="300"
+[<img src="https://img.youtube.com/vi/cbBFlChTaeU/hqdefault.jpg" width="931" height="556"
 />](https://www.youtube.com/embed/cbBFlChTaeU)
-_Tap to start the animation_
 
 
-## Metadata
+## Environment
 
 Xcode 16.2
 iOS 18.2
