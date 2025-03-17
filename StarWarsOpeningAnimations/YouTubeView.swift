@@ -18,14 +18,13 @@ struct YouTubeView: View {
     )
     
     var body: some View {
-        Button(state.label) {
-            buttonPressed()
-        }
         ZStack {
             YouTubePlayerView(starWarsYouTubePlayer)
             Color.red
+            Button(state.label) {
+                buttonPressed()
+            }
         }
-//        YouTubePlayerView("https://music.youtube.com/watch?v=HrIJT_4Txqw")
     }
     
     enum PlayerState {
