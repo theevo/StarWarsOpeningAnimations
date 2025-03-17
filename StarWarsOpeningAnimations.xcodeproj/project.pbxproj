@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		278EADD42D88BB2A003F8BD4 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 278EADD32D88BB2A003F8BD4 /* YouTubePlayerKit */; };
 		27D1A8BE2D837059005C52BF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27D1A8BD2D837059005C52BF /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278EADD42D88BB2A003F8BD4 /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			);
 			name = StarWarsOpeningAnimations;
 			packageProductDependencies = (
+				278EADD32D88BB2A003F8BD4 /* YouTubePlayerKit */,
 			);
 			productName = StarWarsOpeningAnimations;
 			productReference = 27D1A8A32D8365AE005C52BF /* StarWarsOpeningAnimations.app */;
@@ -100,6 +103,9 @@
 			);
 			mainGroup = 27D1A89A2D8365AE005C52BF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				278EADD22D88BB2A003F8BD4 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 27D1A8A42D8365AE005C52BF /* Products */;
 			projectDirPath = "";
@@ -331,6 +337,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		278EADD22D88BB2A003F8BD4 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		278EADD32D88BB2A003F8BD4 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 278EADD22D88BB2A003F8BD4 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 27D1A89B2D8365AE005C52BF /* Project object */;
 }
