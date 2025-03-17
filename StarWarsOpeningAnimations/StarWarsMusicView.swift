@@ -1,5 +1,5 @@
 //
-//  YouTubeView.swift
+//  StarWarsMusicView.swift
 //  StarWarsOpeningAnimations
 //
 //  Created by Tana Vora on 3/17/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 import YouTubePlayerKit
 
-struct YouTubeView: View {
+struct StarWarsMusicView: View {
     @State private var state: PlayerState = .paused
     
     let youTubePlayer: YouTubePlayer = "https://www.youtube.com/watch?v=e9lapdvLSGw"
@@ -64,5 +64,5 @@ struct YouTubeView: View {
 }
 
 #Preview {
-    YouTubeView()
+    StarWarsMusicView()
 }

@@ -18,14 +18,17 @@ It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base
     // crawl settings
     @State private var offset: CGFloat = 1060
     @State private var opacity: Double = 0.0
+    @State private var hiddenMusicView = StarWarsMusicView()
     private var crawlTime = 12.0
     
     var body: some View {
         ZStack {
+            hiddenMusicView
             Color.black.ignoresSafeArea()
             Image("starwarslogo")
                 .scaleEffect(logoScale)
                 .onTapGesture {
+                    hiddenMusicView.buttonPressed()
                     withAnimation(.smooth(duration: 6)) {
                         logoScale = 0.0
                     } completion: {
