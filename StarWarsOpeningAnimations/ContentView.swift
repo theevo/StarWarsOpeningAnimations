@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    static let size = UIScreen.main.bounds.size
+    
     private var crawl = """
 Episode IV\n\n
 A NEW HOPE\n\n
@@ -19,6 +21,7 @@ It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base
     @State private var offset: CGFloat = 1060
     @State private var opacity: Double = 0.0
     @State private var hiddenMusicView = StarWarsMusicView()
+    @State private var isPlaying: Bool = false
     private var crawlTime = 12.0
     
     var body: some View {
@@ -27,23 +30,6 @@ It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base
             Color.black.ignoresSafeArea()
             Image("starwarslogo")
                 .scaleEffect(logoScale)
-                .onTapGesture {
-                    hiddenMusicView.buttonPressed()
-                    withAnimation(.smooth(duration: 6)) {
-                        logoScale = 0.0
-                    } completion: {
-                        opacity = 1.0
-                        withAnimation(.linear(duration: crawlTime)) {
-                            offset = -900
-                        } completion: {
-                            withAnimation {
-                                opacity = 0
-                            } completion: {
-                                reset()
-                            }
-                        }
-                    }
-                }
             VStack {
                 Text(crawl)
                     .opacity(opacity)
@@ -55,13 +41,50 @@ It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base
                     .multilineTextAlignment(.center)
                     .rotation3DEffect(.degrees (66), axis: (x: 1.0, y: 0.0, z: 0.0))
             }
+            Color.clear.ignoresSafeArea()
+                .frame(width: ContentView.size.width, height: ContentView.size.height)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    viewTapped()
+                }
         }
     }
     
-    func reset() {
+    func playAnimation() {
+        withAnimation(.smooth(duration: 6)) {
+            logoScale = 0.0
+        } completion: {
+            opacity = 1.0
+            withAnimation(.linear(duration: crawlTime)) {
+                offset = -900
+            } completion: {
+                withAnimation {
+                    opacity = 0
+                } completion: {
+                    resetAnimation()
+                }
+            }
+        }
+    }
+    
+    func resetAnimation() {
         logoScale = 1.0
         offset = 630
         opacity = 1
+    }
+    
+    func viewTapped() {
+        print("👉", Date())
+        hiddenMusicView.buttonPressed()
+        
+        switch isPlaying {
+            case true:
+            resetAnimation()
+            isPlaying = false
+        case false:
+            playAnimation()
+            isPlaying = true
+        }
     }
 }
 

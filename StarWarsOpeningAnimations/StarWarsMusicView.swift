@@ -57,8 +57,10 @@ struct StarWarsMusicView: View {
                     try await starWarsYouTubePlayer.play()
             case .playing:
                     try await starWarsYouTubePlayer.pause()
+                print("pausing...")
             }
             state.toggle()
+            print("music state: \(state)")
         }
     }
 }
