@@ -8,11 +8,16 @@
 import Testing
 
 protocol MusicPlayerAdapter {
+    func pause()
     func play()
 }
 
 class MusicPlayerSpy: MusicPlayerAdapter {
     var isPlaying = false
+    
+    func pause() {
+        isPlaying = false
+    }
     
     func play() {
         isPlaying = true
@@ -29,5 +34,12 @@ struct MusicPlayerTests {
         let sut = MusicPlayerSpy()
         sut.play()
         #expect(sut.isPlaying == true)
+    }
+    
+    @Test func test_playsThenPauses_isNotPlaying() async throws {
+        let sut = MusicPlayerSpy()
+        sut.play()
+        sut.pause()
+        #expect(sut.isPlaying == false)
     }
 }
