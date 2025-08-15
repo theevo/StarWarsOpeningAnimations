@@ -30,7 +30,7 @@ struct MusicPlayerTests {
         #expect(sut.isPlaying == false)
     }
     
-    @Test func test_player_plays() async throws {
+    @Test func test_plays_isPlaying() async throws {
         let sut = MusicPlayerSpy()
         sut.play()
         #expect(sut.isPlaying == true)
