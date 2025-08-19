@@ -20,6 +20,7 @@ struct CrawlTextView: View {
     
     var uiColor: UIColor = .yellow
     var fontSize: CGFloat = 24
+    @Binding var degrees: Double
     
     private var shapeColor: Color {
         Color(uiColor)
@@ -41,13 +42,17 @@ struct CrawlTextView: View {
                 color: uiColor
             )
         }
-        .rotation3DEffect(.degrees (66), axis: (x: 1.0, y: 0.0, z: 0.0))
+        .rotation3DEffect(.degrees (degrees), axis: (x: 1.0, y: 0.0, z: 0.0))
     }
 }
 
 #Preview {
+    @Previewable @State var degrees: Double = 66.0
+    
+    Text("Degrees: \(degrees, specifier: "%.2f")")
     ZStack {
         Color.black.ignoresSafeArea()
-        CrawlTextView()
+        CrawlTextView(degrees: $degrees)
     }
+    Slider(value: $degrees, in: 0...90)
 }
