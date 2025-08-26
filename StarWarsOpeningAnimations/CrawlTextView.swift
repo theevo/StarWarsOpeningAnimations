@@ -62,4 +62,5 @@ struct CrawlTextView: View {
         )
     }
     Slider(value: $degrees, in: 0...90)
+        .padding(.horizontal)
 }
