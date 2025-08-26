@@ -15,9 +15,11 @@ extension StarWarsCrawl {
     public static let Episode4 = map(film: StarWarsFilm.Episode4)
     
     public static func map(film: StarWarsFilm) -> StarWarsCrawl {
-        let episode = film.episodeRomanNumerals
-        let combinedText = [episode, film.cleanedOpeningCrawl].joined(separator: "\n\n")
-        return StarWarsCrawl(text: combinedText)
+        StarWarsCrawl(text: [
+            film.episodeRomanNumerals,
+            film.title.uppercased(),
+            film.cleanedOpeningCrawl
+        ].joined(separator: "\n\n"))
     }
 }
 

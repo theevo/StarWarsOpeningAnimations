@@ -17,8 +17,8 @@ struct StarWarsCrawlTests {
         #expect(StarWarsCrawl.Episode4.text.contains("Galactic Empire.\n\nDuring the battle"))
     }
     
-    @Test func test_Crawl_Ep4_startsWithEpisodeIV() async throws {
+    @Test func test_Crawl_Ep4_startsWithEpisodeIVandTitle() async throws {
         print(StarWarsCrawl.Episode4.text)
-        #expect(StarWarsCrawl.Episode4.text.starts(with: "Episode IV\n\n"))
+        #expect(StarWarsCrawl.Episode4.text.starts(with: "Episode IV\n\nA NEW HOPE\n\n"))
     }
 }
