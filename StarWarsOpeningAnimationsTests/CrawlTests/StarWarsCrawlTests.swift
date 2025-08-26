@@ -53,7 +53,8 @@ extension StarWarsFilm {
     }
     
     var cleanedOpeningCrawl: String {
-        openingCrawl.replacingOccurrences(of: "\r\n", with: " ")
+        openingCrawl.replacingOccurrences(of: "\r\n\r\n", with: "\n\n")
+            .replacingOccurrences(of: "\r\n", with: " ")
     }
 }
 
@@ -64,5 +65,9 @@ struct StarWarsCrawlTests {
     
     @Test func test_Crawl_Ep4_mentionsPrincessLeia() async throws {
         #expect(StarWarsCrawl.Episode4.text.contains("Princess Leia"))
+    }
+    
+    @Test func test_Crawl_Ep4_has2LineBreaksAfterFirstParagraph() async throws {
+        #expect(StarWarsCrawl.Episode4.text.contains("Galactic Empire.\n\nDuring the battle"))
     }
 }
