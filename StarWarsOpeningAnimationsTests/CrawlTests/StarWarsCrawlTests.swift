@@ -15,7 +15,7 @@ extension StarWarsCrawl {
     public static let Episode4 = map(film: StarWarsFilm.Episode4)
     
     public static func map(film: StarWarsFilm) -> StarWarsCrawl {
-        return StarWarsCrawl(text: film.openingCrawl)
+        return StarWarsCrawl(text: film.cleanedOpeningCrawl)
     }
 }
 
@@ -51,6 +51,10 @@ extension StarWarsFilm {
         default: return ""
         }
     }
+    
+    var cleanedOpeningCrawl: String {
+        openingCrawl.replacingOccurrences(of: "\r\n", with: " ")
+    }
 }
 
 struct StarWarsCrawlTests {
@@ -58,7 +62,7 @@ struct StarWarsCrawlTests {
         #expect(StarWarsFilm.Episode4.episodeRomanNumerals.contains("IV"))
     }
     
-    @Test func test_Crawl_Ep4_hasText() async throws {
-        #expect(StarWarsCrawl.Episode4.text.contains("Princess"))
+    @Test func test_Crawl_Ep4_mentionsPrincessLeia() async throws {
+        #expect(StarWarsCrawl.Episode4.text.contains("Princess Leia"))
     }
 }
