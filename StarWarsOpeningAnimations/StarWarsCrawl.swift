@@ -8,18 +8,20 @@
 import Foundation
 
 public struct StarWarsCrawl {
-    public let text: String
+    public let episodeNumber: String
+    public let title: String
+    public let crawl: String
 }
 
 extension StarWarsCrawl {
     public static let Episode4 = map(film: StarWarsFilm.Episode4)
     
     public static func map(film: StarWarsFilm) -> StarWarsCrawl {
-        StarWarsCrawl(text: [
-            film.episodeRomanNumerals,
-            film.title.uppercased(),
-            film.cleanedOpeningCrawl
-        ].joined(separator: "\n\n"))
+        StarWarsCrawl(
+            episodeNumber: film.episodeRomanNumerals,
+            title: film.title.uppercased(),
+            crawl: film.cleanedOpeningCrawl
+        )
     }
 }
 
